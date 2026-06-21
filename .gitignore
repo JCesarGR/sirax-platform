@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+
+# production
+dist/
+build/
+.next/
+out/
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+logs/
+
+# cache
+.cache/
+.turbo/
+.vercel/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# database / dumps
+*.sqlite
+*.db
+*.dump
+*.sql
+
+# secrets
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json

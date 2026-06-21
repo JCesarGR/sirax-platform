@@ -1,0 +1,28 @@
+# Sirax · Synkdata — Production Caddyfile
+# Replace sirax.example.com with your real domain.
+# Caddy will automatically provision and renew Let's Encrypt certificates.
+
+sirax.example.com {
+	encode gzip zstd
+
+	reverse_proxy sirax:3000 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "geolocation=(), microphone=(), camera=()"
+		-Server
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}
