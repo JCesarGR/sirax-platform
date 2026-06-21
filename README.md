@@ -1,119 +1,231 @@
-# SIRAX
+# SIRAX Platform
 
-### Identity & Risk Intelligence Platform
+<p align="center">
+  <img src="./docs/assets/banner.png" alt="SIRAX Platform Banner" width="100%" />
+</p>
 
-**Know More. Risk Less.**
+<p align="center">
+  <strong>Identity Verification · Risk Intelligence · Digital Footprint Analysis · Compliance Screening</strong>
+</p>
 
-SIRAX is a modular identity verification, digital footprint intelligence, and risk analysis platform designed to centralize multiple verification sources into a single structured workflow.
+<p align="center">
+  <em>Know More. Risk Less.</em>
+</p>
 
-The platform helps organizations validate identities, enrich subject profiles, detect risk indicators, and generate consolidated reports for compliance, due diligence, and background verification processes.
-
----
-
-## Overview
-
-SIRAX was built as a verification and intelligence platform focused on the Mexican market, with a scalable architecture that allows external providers, OSINT modules, compliance sources, and identity validation services to work together without breaking the main verification flow.
-
-The system is designed to support:
-
-* Identity verification
-* CURP and RFC validation
-* Digital footprint enrichment
-* Risk indicator detection
-* Compliance and sanctions screening
-* Provider fallback logic
-* Automated report generation
-* Admin and operational workflows
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Production%20Ready-00E5A8?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-KYC%20%26%20Risk%20Intelligence-111827?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Focus-Mexico%20Verification-2563EB?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Built%20by-Synkdata%20Technologies-7C3AED?style=for-the-badge" />
+</p>
 
 ---
 
-## Key Features
+## What is SIRAX?
+
+**SIRAX** is an identity verification and risk intelligence platform designed to centralize multiple data sources into a single professional verification workflow.
+
+The platform helps analyze identity data, validate official records, enrich digital footprints, identify risk indicators, and generate structured reports for compliance, due diligence, background verification, and operational risk analysis.
+
+SIRAX was built with a modular provider architecture, allowing identity, OSINT, compliance, and enrichment modules to work together without breaking the main verification flow.
+
+---
+
+## Core Purpose
+
+SIRAX answers a critical question:
+
+> **How can an organization verify identity, detect risk, and understand digital exposure from one centralized platform?**
+
+Instead of checking multiple providers manually, SIRAX organizes the process into one unified flow:
+
+```txt
+Input Data
+   ↓
+Identity Validation
+   ↓
+Digital Footprint Enrichment
+   ↓
+Risk & Compliance Screening
+   ↓
+Provider Normalization
+   ↓
+Structured Report
+```
+
+---
+
+## Platform Preview
+
+### Dashboard
+
+<p align="center">
+  <img src="./docs/assets/dashboard.png" alt="SIRAX Dashboard" width="100%" />
+</p>
+
+The dashboard centralizes the verification workflow, provider status, risk indicators, and subject analysis into a clean operational interface.
+
+---
+
+### Intelligence Modules
+
+<p align="center">
+  <img src="./docs/assets/modules.png" alt="SIRAX Intelligence Modules" width="100%" />
+</p>
+
+SIRAX is organized into independent modules that can be enabled, disabled, replaced, or expanded depending on the verification needs.
+
+---
+
+### Report Generation
+
+<p align="center">
+  <img src="./docs/assets/report.png" alt="SIRAX Report Generation" width="100%" />
+</p>
+
+The platform consolidates provider results into structured reports that can be used for review, documentation, and decision-making.
+
+---
+
+## Main Capabilities
 
 ### Identity Verification
 
-SIRAX includes identity validation modules that help verify and normalize personal information through structured checks.
+SIRAX supports identity verification workflows focused on structured Mexican identity data.
 
-Supported workflows may include:
+Key capabilities include:
 
 * CURP validation
 * RFC validation
-* RENAPO provider integration
-* SAT provider integration
 * Identity data normalization
+* Provider-based verification
+* Official data source integration
+* Fallback provider support
 * Validation status tracking
-* Provider fallback support
 
 ---
 
 ### Digital Footprint Intelligence
 
-The digital footprint module enriches a subject profile using authorized, public, and configured data providers.
+SIRAX includes a digital footprint module designed to enrich a subject profile using authorized, configured, and public data sources.
 
-Supported intelligence areas include:
+Supported analysis areas include:
 
 * Email enrichment
 * Phone enrichment
 * Username discovery
 * Public profile correlation
 * Breach exposure indicators
-* Social presence detection
 * Search-based OSINT enrichment
-* Multi-provider data aggregation
-
-Optional or planned integrations may include:
-
-* HaveIBeenPwned
-* Hunter.io
-* NumVerify
-* SerpAPI
-* Sherlock
-* Maigret
-* Maltego-compatible workflows
+* Multi-provider aggregation
+* Digital exposure mapping
 
 ---
 
 ### Risk & Compliance Screening
 
-SIRAX can consolidate risk signals from different sources and organize them into a structured risk profile.
+The platform can organize and evaluate different risk signals from multiple sources.
 
-Risk and compliance areas may include:
+Risk intelligence areas include:
 
-* Sanctions screening
-* PEP indicators
-* Public compliance lists
+* Sanctions indicators
+* PEP-related indicators
+* Public compliance list checks
 * Open-source intelligence findings
-* Source-based evidence tracking
+* Provider evidence tracking
 * Risk categorization
 * Confidence scoring
 * Final risk summary
 
 ---
 
-### Automated Reports
+### Provider Orchestration
 
-SIRAX is designed to generate structured reports that consolidate all verification results into a clear and professional format.
+SIRAX was designed to work with multiple external providers through a modular architecture.
 
-Reports may include:
+Potential provider categories include:
 
-* Identity validation results
-* Provider response summaries
-* Digital footprint findings
-* Risk indicators
-* Evidence references
-* Confidence levels
-* Final assessment
-* Recommended next actions
+* Identity providers
+* Government validation providers
+* OSINT providers
+* Search intelligence providers
+* Email enrichment providers
+* Phone enrichment providers
+* Compliance screening providers
+* AI-assisted report providers
+
+---
+
+## Why SIRAX is Different
+
+SIRAX is not just a form or a simple API wrapper.
+
+It is designed as a complete verification workflow.
+
+| Feature                   | Value                                                  |
+| ------------------------- | ------------------------------------------------------ |
+| Modular providers         | Add or replace providers without breaking the system   |
+| Centralized workflow      | One place for identity, risk, OSINT, and reporting     |
+| Provider status control   | Know which modules are active or missing configuration |
+| Structured reports        | Turn raw provider data into useful intelligence        |
+| Fallback logic            | Continue operating when a provider is unavailable      |
+| Mexico-focused validation | Built around real identity verification needs          |
+| Scalable architecture     | Ready to expand with new modules and providers         |
 
 ---
 
 ## Architecture
 
-SIRAX follows a modular provider-based architecture. Each external source is handled as an independent provider, allowing the platform to add, disable, or replace integrations without affecting the core workflow.
+<p align="center">
+  <img src="./docs/assets/architecture.png" alt="SIRAX Architecture" width="100%" />
+</p>
+
+```txt
+SIRAX Platform
+├── Identity Verification
+│   ├── CURP
+│   ├── RFC
+│   ├── RENAPO
+│   └── SAT
+│
+├── Digital Footprint Intelligence
+│   ├── Email Enrichment
+│   ├── Phone Enrichment
+│   ├── Username Discovery
+│   ├── Search Intelligence
+│   └── OSINT Providers
+│
+├── Risk & Compliance
+│   ├── Sanctions
+│   ├── PEP Indicators
+│   ├── Public Records
+│   └── Risk Signals
+│
+├── Provider Registry
+│   ├── Status Check
+│   ├── Required ENV Vars
+│   ├── Fallback Logic
+│   └── Normalized Responses
+│
+└── Reporting Engine
+    ├── Evidence Summary
+    ├── Risk Summary
+    ├── Provider Results
+    └── Final Report
+```
+
+---
+
+## Suggested Project Structure
 
 ```txt
 src/
 ├── app/
 ├── components/
+│   ├── dashboard/
+│   ├── reports/
+│   ├── forms/
+│   └── ui/
 ├── lib/
 │   ├── providers/
 │   │   ├── identity/
@@ -121,17 +233,17 @@ src/
 │   │   ├── compliance/
 │   │   └── registry.ts
 │   ├── services/
-│   ├── utils/
-│   └── validators/
+│   ├── validators/
+│   └── utils/
 ├── public/
 └── styles/
 ```
 
 ---
 
-## Provider System
+## Provider Registry
 
-The provider system allows SIRAX to centralize external integrations and expose their status without revealing sensitive credentials.
+SIRAX uses a provider registry to centralize external integrations and safely check which services are enabled.
 
 Each provider can define:
 
@@ -139,12 +251,12 @@ Each provider can define:
 * Required environment variables
 * Enabled or disabled status
 * Request logic
-* Timeout handling
 * Error handling
-* Normalized response format
-* Fallback behavior when applicable
+* Timeout handling
+* Normalized response structure
+* Fallback behavior
 
-Example provider structure:
+Example:
 
 ```ts
 export const provider = {
@@ -158,9 +270,7 @@ export const provider = {
 
 ## System Status
 
-SIRAX may expose a protected system status endpoint to verify which providers are correctly configured.
-
-Example:
+SIRAX can expose a protected endpoint to verify provider configuration without exposing secrets.
 
 ```txt
 GET /api/system/status
@@ -178,8 +288,6 @@ Example response:
   }
 }
 ```
-
-This endpoint should never expose real API keys, secrets, tokens, or credentials.
 
 ---
 
@@ -217,8 +325,8 @@ Never commit real credentials to the repository.
 Clone the repository:
 
 ```bash
-git clone https://github.com/Snupdrack/plataformasirax.git
-cd plataformasirax
+git clone https://github.com/JCesarGR/sirax-platform.git
+cd sirax-platform
 ```
 
 Install dependencies:
@@ -227,7 +335,7 @@ Install dependencies:
 npm install
 ```
 
-Run the development server:
+Run development server:
 
 ```bash
 npm run dev
@@ -239,7 +347,7 @@ Build for production:
 npm run build
 ```
 
-Start in production mode:
+Start production mode:
 
 ```bash
 npm start
@@ -247,36 +355,14 @@ npm start
 
 ---
 
-## Recommended Development Workflow
-
-Create a new branch before making changes:
+## Recommended Workflow
 
 ```bash
 git checkout -b feature/new-module
-```
-
-Run the project locally:
-
-```bash
 npm run dev
-```
-
-Check the project before committing:
-
-```bash
 npm run build
-```
-
-Commit changes:
-
-```bash
 git add .
-git commit -m "feat: add new provider module"
-```
-
-Push the branch:
-
-```bash
+git commit -m "feat: add new module"
 git push origin feature/new-module
 ```
 
@@ -286,20 +372,18 @@ git push origin feature/new-module
 
 Before deploying or publishing this repository:
 
-* Remove all `.env` files
-* Rotate any exposed API keys
-* Remove test credentials
-* Avoid committing personal data
-* Avoid committing generated reports
-* Avoid committing database dumps
-* Validate all external provider responses
-* Avoid exposing raw provider responses publicly
-* Log errors without exposing sensitive data
-* Apply rate limits to public endpoints
-* Restrict admin routes
+* Do not commit `.env` files
+* Do not expose API keys
+* Do not commit generated reports with real personal data
+* Do not commit database dumps
+* Do not expose raw provider responses publicly
+* Validate and sanitize all external provider responses
 * Use HTTPS in production
+* Restrict admin routes
+* Apply rate limits to public endpoints
+* Rotate any key that was previously exposed
 
-If any secret was previously committed, deleting it from the current code is not enough. The key must be rotated in the provider dashboard and the Git history should be cleaned before making the repository public.
+If a secret was ever committed, deleting it from the current code is not enough. The key must be rotated and the Git history should be cleaned before making the repository public.
 
 ---
 
@@ -326,23 +410,6 @@ This project does not encourage unauthorized surveillance, credential abuse, acc
 * [ ] Admin analytics panel
 * [ ] Additional fallback providers for CURP/RFC validation
 * [ ] Expanded digital footprint intelligence module
-
----
-
-## Tech Stack
-
-SIRAX may use technologies such as:
-
-* React / Next.js
-* Node.js
-* TypeScript
-* API routes
-* External verification providers
-* OSINT enrichment modules
-* Database integration
-* SMTP notifications
-* Docker-ready deployment
-* Cloud or VPS infrastructure
 
 ---
 
