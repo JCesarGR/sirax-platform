@@ -1,20 +1,6 @@
 # SIRAX Platform
 
 <p align="center">
-  <video 
-    src="https://github.com/user-attachments/assets/5a94d6bd-bc2d-4712-9afd-74217a7f1529"
-    width="100%"
-    controls
-    autoplay
-    muted
-    loop
-    playsinline>
-  </video>
-</p>
-```
-
-
-<p align="center">
   <img src="./download/imagen1.png" alt="SIRAX Platform Banner" width="100%" />
 </p>
 
@@ -431,7 +417,18 @@ curl --request POST "$SIRAX_API_URL/api/v1/digital-footprint" \
 ```
 
 ---
-
+<p align="center">
+  <video 
+    src="https://github.com/user-attachments/assets/5a94d6bd-bc2d-4712-9afd-74217a7f1529"
+    width="100%"
+    controls
+    autoplay
+    muted
+    loop
+    playsinline>
+  </video>
+</p>
+```
 ## Security & Responsible Use
 
 SIRAX is designed for authorized verification, compliance, fraud prevention, due diligence and operational risk intelligence workflows.
