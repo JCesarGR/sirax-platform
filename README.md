@@ -2,7 +2,7 @@
 
 <p align="center">
   <video 
-    src="./download/video1.mp4"
+    src="https://github.com/user-attachments/assets/5a94d6bd-bc2d-4712-9afd-74217a7f1529"
     width="100%"
     controls
     autoplay
@@ -11,6 +11,8 @@
     playsinline>
   </video>
 </p>
+```
+
 
 <p align="center">
   <img src="./download/imagen1.png" alt="SIRAX Platform Banner" width="100%" />
