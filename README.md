@@ -199,7 +199,13 @@ Supported analysis areas include:
 ---
 
 ### Risk & Compliance Screening
-
+<p align="center">
+  <img 
+    src="https://github.com/JCesarGR/sirax-platform/blob/main/download/Animation2.gif" 
+    alt="SIRAX Platform Animation" 
+    width="100%" 
+  />
+</p>
 The platform can organize and evaluate risk signals from multiple sources.
 
 Risk intelligence areas include:
