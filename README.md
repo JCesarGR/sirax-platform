@@ -1,7 +1,7 @@
 # SIRAX Platform
 
 <p align="center">
-  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/imagen1.png" alt="SIRAX Platform Banner" width="100%" />
+  <img src="./download/imagen1.png" alt="SIRAX Platform Banner" width="100%" />
 </p>
 
 <p align="center">
@@ -50,7 +50,7 @@ SIRAX was built with a modular provider architecture, allowing identity, OSINT, 
 ## Product Experience
 
 <p align="center">
-  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/Animation1.gif" alt="SIRAX Platform Animation" width="100%" />
+  <img src="https:./download/Animation1.gif" alt="SIRAX Platform Animation" width="100%" />
 </p>
 
 <p align="center">
@@ -201,7 +201,7 @@ Supported analysis areas include:
 ### Risk & Compliance Screening
 <p align="center">
   <img 
-    src="https://github.com/JCesarGR/sirax-platform/blob/main/download/Animation2.gif" 
+    src="./download/Animation2.gif" 
     alt="SIRAX Platform Animation" 
     width="100%" 
   />
@@ -397,7 +397,7 @@ export const provider = {
 SIRAX can expose a protected endpoint to verify provider configuration without exposing secrets.
 <p align="center">
   <img 
-    src="https://github.com/JCesarGR/sirax-platform/blob/main/download/Animation3.gif" 
+    src="./download/Animation3.gif" 
     alt="SIRAX Platform Animation" 
     width="100%" 
   />
