@@ -1,7 +1,7 @@
 # SIRAX Platform
 
 <p align="center">
-  <img src="./download/sirax-hero.png" alt="SIRAX Platform Banner" width="100%" />
+  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/imagen1.png" alt="SIRAX Platform Banner" width="100%" />
 </p>
 
 <p align="center">
@@ -50,7 +50,7 @@ SIRAX was built with a modular provider architecture, allowing identity, OSINT, 
 ## Product Experience
 
 <p align="center">
-  <img src="./download/animacion1.gif" alt="SIRAX Platform Animation" width="100%" />
+  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/Animation1.gif" alt="SIRAX Platform Animation" width="100%" />
 </p>
 
 <p align="center">
@@ -62,7 +62,7 @@ SIRAX was built with a modular provider architecture, allowing identity, OSINT, 
 ## API Terminal Preview
 
 <p align="center">
-  <img src="./download/animacion2.gif" alt="SIRAX API Terminal Demo" width="100%" />
+  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/digital%20footprint.png" alt="SIRAX API Terminal Demo" width="100%" />
 </p>
 
 Example API request:
