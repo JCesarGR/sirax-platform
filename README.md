@@ -1,6 +1,18 @@
 # SIRAX Platform
 
 <p align="center">
+  <video 
+    src="./download/video1.mp4"
+    width="100%"
+    controls
+    autoplay
+    muted
+    loop
+    playsinline>
+  </video>
+</p>
+
+<p align="center">
   <img src="./download/imagen1.png" alt="SIRAX Platform Banner" width="100%" />
 </p>
 
@@ -39,18 +51,14 @@
 
 ## What is SIRAX?
 
-**SIRAX** is an identity verification and risk intelligence platform designed to centralize multiple data sources into a single professional verification workflow.
+**SIRAX** is an identity verification and risk intelligence platform designed to help organizations understand who they are evaluating, what risk signals exist, and how much digital exposure is associated with a person, company, account, email, phone number, or identity record.
 
-The platform helps analyze identity data, validate official records, enrich digital footprints, identify risk indicators, and generate structured reports for compliance, due diligence, background verification, and operational risk analysis.
+The platform centralizes identity verification, digital footprint enrichment, provider orchestration, compliance screening, risk scoring, and structured reporting into one operational workflow.
 
-SIRAX was built with a modular provider architecture, allowing identity, OSINT, compliance, enrichment, and reporting modules to work together without breaking the main verification flow.
-
----
-
-## Product Experience
+SIRAX is built for environments where fragmented information is not enough. Instead of checking multiple services manually, the platform organizes data sources, normalizes provider responses, correlates signals, and converts raw findings into intelligence that can support verification, due diligence, onboarding, fraud prevention, compliance, and background review processes.
 
 <p align="center">
-  <img src="https:./download/Animation1.gif" alt="SIRAX Platform Animation" width="100%" />
+  <img src="./download/animacion1.gif" alt="SIRAX Product Experience" width="100%" />
 </p>
 
 <p align="center">
@@ -59,85 +67,47 @@ SIRAX was built with a modular provider architecture, allowing identity, OSINT, 
 
 ---
 
-## API Terminal Preview
+## Core Vision
 
-<p align="center">
-  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/digital%20footprint.png" alt="SIRAX API Terminal Demo" width="100%" />
-</p>
+SIRAX was created around one central question:
 
-Example API request:
+> **How can an organization verify identity, detect risk, and understand digital exposure from one centralized platform?**
 
-```bash
-curl --request POST "$SIRAX_API_URL/api/v1/digital-footprint" \
-  --header "Authorization: Bearer $SIRAX_API_KEY" \
-  --header "Content-Type: application/json" \
-  --data '{
-    "username": "demo_user",
-    "email": "demo@sirax.lat",
-    "phone": "+52XXXXXXXXXX"
-  }'
-```
+Most verification workflows are fragmented. One provider validates identity, another checks compliance lists, another enriches email data, another reviews phone information, and another performs open-source intelligence searches.
 
-Example normalized response:
+SIRAX brings these signals together into a modular intelligence layer.
 
-```json
-{
-  "status": "success",
-  "request_id": "sirax_dfp_9a82f1",
-  "latency": "1.8s",
-  "module": "digital_footprint",
-  "result": {
-    "username": "demo_user",
-    "presence_score": 89,
-    "social_profiles": 12,
-    "developer_profiles": 4,
-    "commercial_presence": true,
-    "platforms": [
-      "github",
-      "gitlab",
-      "reddit",
-      "x",
-      "instagram",
-      "tiktok",
-      "discord"
-    ],
-    "email_intelligence": {
-      "disposable": false,
-      "breached": true,
-      "corporate_domain": true
-    },
-    "phone_intelligence": {
-      "carrier": "Telcel",
-      "line_type": "mobile",
-      "spam_reports": 0
-    }
-  }
-}
+```txt
+Identity Data
+   ↓
+Official Validation
+   ↓
+Digital Footprint Enrichment
+   ↓
+Compliance & Risk Screening
+   ↓
+Provider Normalization
+   ↓
+Risk Scoring
+   ↓
+Structured Intelligence Report
 ```
 
 ---
 
-## Core Purpose
+## Platform Scope
 
-SIRAX answers a critical question:
+SIRAX is designed to cover several layers of identity and risk intelligence.
 
-> **How can an organization verify identity, detect risk, and understand digital exposure from one centralized platform?**
-
-Instead of checking multiple providers manually, SIRAX organizes the process into one unified flow:
-
-```txt
-Input Data
-   ↓
-Identity Validation
-   ↓
-Digital Footprint Enrichment
-   ↓
-Risk & Compliance Screening
-   ↓
-Provider Normalization
-   ↓
-Structured Report
-```
+| Layer                  | What SIRAX Covers                                                            |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| Identity Verification  | CURP, RFC, RENAPO, SAT, identity validation and official record checks       |
+| Digital Footprint      | Email, phone, username, social profiles, developer profiles, public exposure |
+| Compliance Screening   | Sanctions, PEP indicators, public lists, risk signals and watchlist logic    |
+| OSINT Enrichment       | Search intelligence, username discovery, public profile mapping and dorks    |
+| Provider Orchestration | Modular integrations, fallbacks, provider status and normalized responses    |
+| Risk Scoring           | Signal classification, confidence scoring and final risk summary             |
+| Reporting              | Structured reports, evidence references, JSON output and PDF-ready summaries |
 
 ---
 
@@ -156,74 +126,189 @@ flowchart TD
     I --> J[PDF / JSON / Dashboard Review]
 ```
 
+<p align="center">
+  <img src="./download/animacion2.gif" alt="SIRAX Intelligence Workflow" width="100%" />
+</p>
+
 ---
 
-## Main Capabilities
+## Identity Verification
 
-### Identity Verification
+SIRAX supports structured identity verification workflows focused on Mexican identity and compliance needs.
 
-SIRAX supports structured identity verification workflows focused on Mexican identity data.
+The identity layer is designed to validate, normalize, and enrich personal or business records through official and provider-based sources.
 
-Key capabilities include:
+### Capabilities
 
 * CURP validation
 * RFC validation
 * RENAPO verification
 * SAT verification
 * Identity data normalization
+* Format validation
 * Provider-based verification
-* Official data source integration
 * Fallback provider support
 * Validation status tracking
+* Evidence-based verification results
+
+SIRAX does not treat identity verification as a single API call. It treats it as a workflow where every provider response becomes part of a larger verification profile.
 
 ---
 
-### Digital Footprint Intelligence
+## Digital Footprint Intelligence
 
-SIRAX includes a digital footprint module designed to enrich a subject profile using configured, authorized, and public data sources.
+The digital footprint module helps identify public exposure connected to usernames, emails, phone numbers, and other subject identifiers.
 
-Supported analysis areas include:
+This layer is useful for understanding whether a subject has a visible online presence, whether an email appears in risk-related sources, whether a username is reused across platforms, or whether phone and email metadata can enrich the verification profile.
+
+<p align="center">
+  <img src="./download/imagen2.png" alt="SIRAX Digital Footprint Interface" width="100%" />
+</p>
+
+### Capabilities
 
 * Email enrichment
 * Phone enrichment
 * Username discovery
 * Public profile correlation
-* Breach exposure indicators
-* Search-based OSINT enrichment
-* Social profile discovery
 * Developer profile discovery
+* Social profile discovery
+* Search-based OSINT enrichment
+* Breach exposure indicators
+* Disposable email detection
 * Commercial presence detection
-* Multi-provider aggregation
-* Digital exposure mapping
+* Multi-platform visibility mapping
+* Digital exposure scoring
+
+### Example Analysis Areas
+
+| Input        | Possible Intelligence                                                  |
+| ------------ | ---------------------------------------------------------------------- |
+| Email        | Breach exposure, disposable status, domain type, reputation indicators |
+| Phone        | Country, carrier, line type, risk indicators, spam signals             |
+| Username     | Public profiles, reused handles, developer accounts, social presence   |
+| CURP / RFC   | Identity consistency, official record validation, provider status      |
+| Full profile | Risk correlation, confidence scoring and final report                  |
+
+<p align="center">
+  <img src="./download/animacion3.gif" alt="SIRAX Digital Footprint Intelligence" width="100%" />
+</p>
 
 ---
 
-### Risk & Compliance Screening
-<p align="center">
-  <img 
-    src="./download/Animation2.gif" 
-    alt="SIRAX Platform Animation" 
-    width="100%" 
-  />
-</p>
-The platform can organize and evaluate risk signals from multiple sources.
+## Risk & Compliance Screening
 
-Risk intelligence areas include:
+SIRAX can organize and evaluate risk signals from different compliance and public intelligence sources.
+
+The goal is not only to find raw matches, but to classify them, normalize them, and present them in a way that is useful for operational decision-making.
+
+### Risk Areas
 
 * Sanctions indicators
 * PEP-related indicators
 * Public compliance list checks
+* Public records
 * Open-source intelligence findings
 * Provider evidence tracking
 * Risk categorization
 * Confidence scoring
 * Final risk summary
 
+```txt
+Raw Provider Data
+   ↓
+Signal Extraction
+   ↓
+Risk Classification
+   ↓
+Confidence Level
+   ↓
+Analyst-Ready Summary
+```
+
+<p align="center">
+  <img src="./download/animacion4.gif" alt="SIRAX Risk and Compliance Intelligence" width="100%" />
+</p>
+
 ---
 
-### Report Generation
+## Provider Orchestration
 
-SIRAX consolidates provider results into structured reports that can be used for review, documentation, and decision-making.
+SIRAX was designed with a modular provider architecture. This allows the platform to connect multiple data providers without making the core verification workflow dependent on only one service.
+
+Each provider can be enabled, disabled, replaced, or extended without breaking the full platform.
+
+### Provider Categories
+
+| Category              | Providers / Modules                        | Purpose                                          |
+| --------------------- | ------------------------------------------ | ------------------------------------------------ |
+| Identity Verification | CURP, RFC, RENAPO, SAT                     | Validate official identity records               |
+| Government Signals    | IMSS, RND                                  | Enrich identity and background review            |
+| Compliance            | OFAC, OpenSanctions, PEP indicators        | Detect sanctions, watchlists and risk signals    |
+| Digital Footprint     | SerpAPI, Sherlock, Maigret                 | Discover public online presence                  |
+| Email Intelligence    | HaveIBeenPwned, Hunter, Gravatar           | Analyze email exposure and reputation            |
+| Phone Intelligence    | NumVerify, carrier lookup, spam indicators | Validate phone data and identify risk signals    |
+| AI Reporting          | OpenAI, Gemini                             | Generate structured analyst-style summaries      |
+| Fallback Providers    | Nubarium, APIMarket                        | Maintain continuity if a provider is unavailable |
+
+---
+
+## Why SIRAX is Different
+
+SIRAX is not just a form, a dashboard, or a simple API wrapper.
+
+It is designed as a complete verification and intelligence workflow.
+
+| Difference                     | Value                                                            |
+| ------------------------------ | ---------------------------------------------------------------- |
+| Modular provider system        | New providers can be added without rebuilding the platform       |
+| Mexico-focused verification    | Built around CURP, RFC, RENAPO, SAT and local verification needs |
+| Digital footprint intelligence | Connects emails, phones, usernames and public profiles           |
+| Provider fallback logic        | Keeps the workflow alive when one provider fails                 |
+| Evidence-based reporting       | Every finding can be connected to a provider result              |
+| Risk scoring                   | Converts multiple signals into a more readable risk profile      |
+| Centralized dashboard          | Reduces manual review across disconnected tools                  |
+| API-first approach             | Can serve internal systems, dashboards or external integrations  |
+| Compliance-aware design        | Built for authorized verification and lawful use cases           |
+| Scalable architecture          | Ready to expand into more providers, modules and reports         |
+
+---
+
+## System Status & Provider Health
+
+SIRAX can expose a protected system status endpoint to verify which providers are active, disabled, or missing configuration.
+
+This helps operators understand whether the platform is ready to run a full verification workflow.
+
+```txt
+GET /api/system/status
+```
+
+Example response:
+
+```json
+{
+  "providers": {
+    "serpapi": "enabled",
+    "hunter": "enabled",
+    "numverify": "missing_api_key",
+    "apimarket": "enabled",
+    "nubarium": "disabled",
+    "opensanctions": "enabled",
+    "ai_report": "enabled"
+  }
+}
+```
+
+<p align="center">
+  <img src="./download/animacion5.gif" alt="SIRAX Provider Health Dashboard" width="100%" />
+</p>
+
+---
+
+## Report Generation
+
+SIRAX transforms provider responses into structured reports that can support review, documentation and decision-making.
 
 Report outputs may include:
 
@@ -237,61 +322,37 @@ Report outputs may include:
 * JSON export
 * PDF-ready report structure
 
----
+### Example Report Structure
 
-## Provider Orchestration
-
-SIRAX was designed to work with multiple external providers through a modular architecture.
-
-Potential provider categories include:
-
-* Identity providers
-* Government validation providers
-* OSINT providers
-* Search intelligence providers
-* Email enrichment providers
-* Phone enrichment providers
-* Compliance screening providers
-* AI-assisted report providers
-
----
-
-## Provider Matrix
-
-| Category              | Providers / Modules                        | Purpose                                                 |
-| --------------------- | ------------------------------------------ | ------------------------------------------------------- |
-| Identity Verification | CURP, RFC, RENAPO, SAT                     | Validate identity and official records                  |
-| Government Signals    | IMSS, RND                                  | Enrich verification with public or authorized sources   |
-| Compliance            | OFAC, OpenSanctions, PEP indicators        | Detect sanctions, watchlist, and risk signals           |
-| Digital Footprint     | SerpAPI, Sherlock, Maigret                 | Discover public online presence                         |
-| Email Intelligence    | HaveIBeenPwned, Hunter, Gravatar           | Analyze email exposure and reputation                   |
-| Phone Intelligence    | NumVerify, carrier lookup, spam indicators | Validate phone data and risk signals                    |
-| AI Reporting          | OpenAI, Gemini                             | Generate structured summaries and analyst-style reports |
-| Fallback Providers    | Nubarium, APIMarket                        | Maintain continuity when a provider is unavailable      |
+```json
+{
+  "status": "success",
+  "verification_id": "sirax_ver_2f81a0",
+  "identity": {
+    "curp_valid": true,
+    "rfc_valid": true,
+    "identity_score": 94
+  },
+  "digital_footprint": {
+    "presence_score": 89,
+    "profiles_found": 12,
+    "developer_profiles": 4
+  },
+  "risk": {
+    "risk_score": 8,
+    "risk_level": "low",
+    "flags": []
+  },
+  "report": {
+    "format": ["json", "pdf"],
+    "status": "ready"
+  }
+}
+```
 
 ---
 
-## Why SIRAX is Different
-
-SIRAX is not just a form or a simple API wrapper.
-
-It is designed as a complete verification workflow.
-
-| Feature                        | Value                                                   |
-| ------------------------------ | ------------------------------------------------------- |
-| Modular providers              | Add or replace providers without breaking the system    |
-| Centralized workflow           | One place for identity, risk, OSINT, and reporting      |
-| Provider status control        | Know which modules are active or missing configuration  |
-| Structured reports             | Turn raw provider data into useful intelligence         |
-| Fallback logic                 | Continue operating when a provider is unavailable       |
-| Mexico-focused validation      | Built around real identity verification needs           |
-| Digital footprint intelligence | Connects usernames, emails, phones, and public profiles |
-| Risk scoring                   | Organizes signals into a clear operational score        |
-| Scalable architecture          | Ready to expand with new modules and providers          |
-
----
-
-## Architecture
+## Architecture Overview
 
 ```txt
 SIRAX Platform
@@ -334,177 +395,11 @@ SIRAX Platform
 
 ---
 
-## Suggested Project Structure
+## API-Ready Design
 
-```txt
-src/
-├── app/
-├── components/
-│   ├── dashboard/
-│   ├── reports/
-│   ├── forms/
-│   ├── terminal/
-│   └── ui/
-├── lib/
-│   ├── providers/
-│   │   ├── identity/
-│   │   ├── osint/
-│   │   ├── compliance/
-│   │   ├── enrichment/
-│   │   └── registry.ts
-│   ├── services/
-│   ├── validators/
-│   └── utils/
-├── public/
-├── download/
-│   ├── sirax-hero.png
-│   ├── animacion1.gif
-│   └── animacion2.gif
-└── styles/
-```
+SIRAX is designed to work as both a dashboard and an API-driven intelligence layer.
 
----
-
-## Provider Registry
-
-SIRAX uses a provider registry to centralize external integrations and safely check which services are enabled.
-
-Each provider can define:
-
-* Provider name
-* Required environment variables
-* Enabled or disabled status
-* Request logic
-* Error handling
-* Timeout handling
-* Normalized response structure
-* Fallback behavior
-
-Example:
-
-```ts
-export const provider = {
-  name: "ProviderName",
-  enabled: Boolean(process.env.PROVIDER_API_KEY),
-  requiredEnv: ["PROVIDER_API_KEY"],
-};
-```
-
----
-
-## System Status
-
-SIRAX can expose a protected endpoint to verify provider configuration without exposing secrets.
-<p align="center">
-  <img 
-    src="./download/Animation3.gif" 
-    alt="SIRAX Platform Animation" 
-    width="100%" 
-  />
-</p>
-```txt
-GET /api/system/status
-```
-
-Example response:
-
-```json
-{
-  "providers": {
-    "serpapi": "enabled",
-    "hunter": "enabled",
-    "numverify": "missing_api_key",
-    "apimarket": "enabled",
-    "nubarium": "disabled",
-    "opensanctions": "enabled",
-    "ai_report": "enabled"
-  }
-}
-```
-
----
-
-## Environment Variables
-
-Create a `.env` file based on `.env.example`.
-
-```env
-DATABASE_URL=
-JWT_SECRET=
-
-SIRAX_API_URL=
-SIRAX_API_KEY=
-
-OPENAI_API_KEY=
-GEMINI_API_KEY=
-
-SERPAPI_API_KEY=
-HIBP_API_KEY=
-HUNTER_API_KEY=
-NUMVERIFY_API_KEY=
-
-NUBARIUM_API_KEY=
-APIMARKET_API_KEY=
-
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
-```
-
-Never commit real credentials to the repository.
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/JCesarGR/sirax-platform.git
-cd sirax-platform
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run development server:
-
-```bash
-npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-```
-
-Start production mode:
-
-```bash
-npm start
-```
-
----
-
-## Recommended Workflow
-
-```bash
-git checkout -b feature/new-module
-npm run dev
-npm run build
-git add .
-git commit -m "feat: add new module"
-git push origin feature/new-module
-```
-
----
-
-## API Example
+Example identity verification request:
 
 ```bash
 curl --request POST "$SIRAX_API_URL/api/v1/identity/verify" \
@@ -520,66 +415,45 @@ curl --request POST "$SIRAX_API_URL/api/v1/identity/verify" \
   }'
 ```
 
-Example response:
+Example digital footprint request:
 
-```json
-{
-  "status": "success",
-  "verification_id": "sirax_ver_2f81a0",
-  "identity": {
-    "curp_valid": true,
-    "rfc_valid": true,
-    "identity_score": 94
-  },
-  "digital_footprint": {
-    "presence_score": 89,
-    "profiles_found": 12,
-    "developer_profiles": 4
-  },
-  "risk": {
-    "risk_score": 8,
-    "risk_level": "low",
-    "flags": []
-  },
-  "report": {
-    "format": ["json", "pdf"],
-    "status": "ready"
-  }
-}
+```bash
+curl --request POST "$SIRAX_API_URL/api/v1/digital-footprint" \
+  --header "Authorization: Bearer $SIRAX_API_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "username": "demo_user",
+    "email": "demo@sirax.lat",
+    "phone": "+52XXXXXXXXXX"
+  }'
 ```
 
 ---
 
-## Security Guidelines
+## Security & Responsible Use
 
-Before deploying or publishing this repository:
+SIRAX is designed for authorized verification, compliance, fraud prevention, due diligence and operational risk intelligence workflows.
+
+The platform should only be used with lawful basis, proper authorization, user consent where required, and in accordance with applicable privacy, data protection and compliance regulations.
+
+This project does not encourage unauthorized surveillance, credential abuse, account intrusion, unauthorized access, harassment, or misuse of third-party systems.
+
+Before deploying or publishing a repository based on this project:
 
 * Do not commit `.env` files
 * Do not expose API keys
-* Do not commit generated reports with real personal data
-* Do not commit database dumps
+* Do not publish real personal data
+* Do not commit generated reports with sensitive information
 * Do not expose raw provider responses publicly
-* Validate and sanitize all external provider responses
+* Validate and sanitize all provider responses
 * Use HTTPS in production
 * Restrict admin routes
 * Apply rate limits to public endpoints
 * Rotate any key that was previously exposed
 
-If a secret was ever committed, deleting it from the current code is not enough. The key must be rotated and the Git history should be cleaned before making the repository public.
-
 ---
 
-## Compliance Notice
-
-SIRAX is designed for authorized verification, compliance, and risk intelligence workflows.
-
-The platform should only be used with lawful basis, user consent where required, and in accordance with applicable privacy, data protection, and compliance regulations.
-
-This project does not encourage unauthorized surveillance, credential abuse, account intrusion, unauthorized access, or misuse of third-party systems.
-
----
-
-## Roadmap
+## Strategic Roadmap
 
 * [ ] Provider health dashboard
 * [ ] Advanced report builder
@@ -590,12 +464,12 @@ This project does not encourage unauthorized surveillance, credential abuse, acc
 * [ ] Webhook support
 * [ ] Multi-tenant support
 * [ ] Admin analytics panel
-* [ ] Additional fallback providers for CURP/RFC validation
 * [ ] Expanded digital footprint intelligence module
 * [ ] API terminal preview inside dashboard
 * [ ] AI-assisted analyst report
 * [ ] Provider latency monitoring
 * [ ] Evidence-based reporting engine
+* [ ] Additional fallback providers for CURP/RFC validation
 
 ---
 
