@@ -1,5 +1,11 @@
 <p align="center">
-  <video src="./VIDEO1.mp4" width="100%" controls autoplay muted loop playsinline>
-    Tu navegador no soporta la reproducción de video.
+  <video 
+    src="https://github.com/user-attachments/assets/5a94d6bd-bc2d-4712-9afd-74217a7f1529"
+    width="100%"
+    controls
+    autoplay
+    muted
+    loop
+    playsinline>
   </video>
 </p>
