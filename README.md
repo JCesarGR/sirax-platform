@@ -395,7 +395,13 @@ export const provider = {
 ## System Status
 
 SIRAX can expose a protected endpoint to verify provider configuration without exposing secrets.
-
+<p align="center">
+  <img 
+    src="https://github.com/JCesarGR/sirax-platform/blob/main/download/Animation3.gif" 
+    alt="SIRAX Platform Animation" 
+    width="100%" 
+  />
+</p>
 ```txt
 GET /api/system/status
 ```
