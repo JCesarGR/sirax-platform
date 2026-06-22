@@ -1,7 +1,7 @@
 # SIRAX Platform
 
 <p align="center">
-  <img src="./docs/assets/banner.png" alt="SIRAX Platform Banner" width="100%" />
+  <img src="https://github.com/JCesarGR/sirax-platform/blob/main/download/sirax-hero.png" alt="SIRAX Platform Banner" width="100%" />
 </p>
 
 <p align="center">
